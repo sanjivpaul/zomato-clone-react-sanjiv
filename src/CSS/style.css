@@ -1,0 +1,302 @@
+/* PAGE01:CSS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Title and subtitle colors */
+.title-color {
+  color: #192f60;
+}
+
+.sub-title-color {
+  color: #8c96ab;
+}
+
+/* Background-image */
+.mainContainer {
+  width: 100vw;
+  height: 480px;
+  background: url(/public/images/bg-img/main-bg.png);
+}
+
+/* buttons */
+.btn-login {
+  border: none;
+}
+
+.btn-create {
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+/* Brand-Logo */
+.brand-logo {
+  color: #ae1c91;
+}
+
+.brand {
+  width: 147px;
+  height: 147px;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 50%;
+  background-color: white;
+  padding: 10px;
+}
+
+.home-page-input {
+  /* border: 2px solid red; */
+  width: 600px;
+}
+
+/* Drop-Down-Items */
+.location-search {
+  position: relative;
+}
+.resturant-search {
+  position: relative;
+}
+.search-autoComplete {
+  position: absolute;
+  margin-top: 0.5rem;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  border: 1px solid lightgray;
+  background-color: white;
+  padding-bottom: 0.5rem;
+}
+
+.search-autoComplete li {
+  padding: 0.2rem 1rem;
+  color: #636f88;
+  cursor: pointer;
+}
+
+.search-autoComplete-item {
+  display: flex;
+  align-items: center;
+}
+.search-autoComplete-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.search-autoComplete-item p {
+  margin: 0 !important;
+}
+
+.resturant {
+  width: 380px;
+}
+
+/* Quick-Search-Area */
+.quick-search-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.quick-search-image {
+  width: 10rem;
+  height: 10rem;
+}
+
+.food-item-container {
+  margin: 0;
+  padding: 0;
+  width: 21.5rem;
+  height: 10rem;
+  cursor: pointer;
+}
+
+/* PAGE02:CSS --------------------------------------------------------------------------*/
+
+.brand-name {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-login {
+  color: white;
+  background: transparent;
+  border: none;
+  margin-right: 10px;
+}
+
+.btn-create-account {
+  color: white;
+  background: transparent;
+  border-radius: 3px;
+  padding: 7px 10px;
+  border: 1px solid white;
+}
+
+.filter-section {
+  max-height: 650px;
+  height: 40em;
+}
+
+.form-check-input:checked {
+  background-color: #192f60;
+  border-color: #192f60;
+}
+
+.search-items-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+}
+
+.page-item {
+  color: #8c96ab;
+  padding: 6px 16px;
+  font-size: 20px;
+  border-radius: 4px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.page-item a {
+  text-decoration: none;
+  color: #8c96ab;
+}
+
+.page-item a:hover {
+  color: white;
+}
+
+.page-item:hover {
+  background-color: #8c96ab;
+  color: white;
+}
+
+.title-text-color {
+  color: #192f60;
+}
+
+.sub-title-text-color {
+  color: #636f88;
+}
+
+/* **********************Bootstrap resturant page******************* */
+.resturant-page-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.restaurant-main-image {
+  height: 70vh;
+  width: 85%;
+  overflow: hidden;
+}
+
+.restaurant-main-image img {
+  height: 150%;
+  width: 100%;
+}
+.btn-gallery {
+  top: 85%;
+  right: 5%;
+  background-color: rgba(245, 222, 179, 0.411);
+  color: black;
+  font-weight: bold;
+}
+.hand {
+  cursor: pointer;
+}
+
+/* modal */
+.footer-modal-color {
+  background: #edf0f6;
+  /* background: transparent */
+}
+.box {
+  height: 100px;
+  width: 100px;
+  background: #192f60;
+}
+.modal-text-dsc {
+  font-size: 13px;
+}
+
+/* menu item  */
+
+.menu-food-item {
+  width: 90px;
+  height: 90px;
+  background-color: #192f60;
+  position: relative;
+}
+.menu-food-item .add {
+  position: absolute;
+  left: 25%;
+  bottom: -20%;
+}
+.menu-food-item img {
+  width: 100%;
+  height: 100%;
+}
+.menu-food-item .order-item-count {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -20%;
+}
+.menu-food-item .order-item-count span {
+  width: 23px;
+  height: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  padding: 2px 5px;
+  border: 2px solid gray;
+  margin: 0 2px;
+  border-radius: 5px;
+}
+
+/* search page end */
+
+/* iphone SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* physical 960x640 
+   480x320
+*/
+
+  /* .brand-name {
+    width: 100px;
+    height: 100px;
+    font-size: 3.5rem;
+  } */
+  .search {
+    width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-select {
+    width: 85% !important;
+  }
+  .form-control,
+  .input-group {
+    width: 85% !important;
+  }
+  .main-section {
+    background-color: red;
+    height: auto;
+    padding-bottom: 2rem;
+    background-size: cover;
+  }
+  .quick-search-item {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
