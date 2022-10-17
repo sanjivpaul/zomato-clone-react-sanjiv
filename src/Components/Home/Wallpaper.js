@@ -10,7 +10,7 @@ function Wallpaper() {
 
   let getLocationList = async () => {
     try {
-      let response = await axios.get("http://localhost:5003/api/get-location");
+      let response = await axios.get("https://zc-sanjiv-api-app.herokuapp.com/api/get-location");
       let data = response.data;
       if (data.status === true) {
         setLocationList([...data.result]);
@@ -38,7 +38,7 @@ function Wallpaper() {
     if (value !== "") {
       try {
         let url =
-          "http://localhost:5003/api/get-resturant-by-location-id/" + value;
+          "https://zc-sanjiv-api-app.herokuapp.com/api/get-resturant-by-location-id/" + value;
         let { data } = await axios.get(url); //destructuring
         // console.log(data);
         if (data.status === true) {

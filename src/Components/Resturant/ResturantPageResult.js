@@ -43,7 +43,7 @@ function ResturantPageResult() {
 
   let getResturantDetails = async () => {
     try {
-      let URL = "http://localhost:5003/api/get-resturant-details-by-id/" + id;
+      let URL = "https://zc-sanjiv-api-app.herokuapp.com/api/get-resturant-details-by-id/" + id;
       let { data } = await axios.get(URL);
       // console.log(data);
       if (data.status === true) {
@@ -60,7 +60,7 @@ function ResturantPageResult() {
   let getMenuItems = async () => {
     try {
       let URL =
-        "http://localhost:5003/api/get-menu-item-list-by-resturant-id/" + id;
+        "https://zc-sanjiv-api-app.herokuapp.com/api/get-menu-item-list-by-resturant-id/" + id;
       let { data } = await axios.get(URL);
       if (data.status === true) {
         // console.log(data.result);
@@ -121,7 +121,7 @@ function ResturantPageResult() {
     //   alert("SDK is loaded");
     // }
     let { data } = await axios.post(
-      "http://localhost:5003/api/payment/gen-order",
+      "https://zc-sanjiv-api-app.herokuapp.com/api/payment/gen-order",
       serverData
     );
     var order = data.order;
@@ -137,7 +137,7 @@ function ResturantPageResult() {
       order_id: order.id, //order id is generated @ server side -- step 1
       handler: async function (response) {
         try {
-          let URL = "http://localhost:5003/api/payment/verify";
+          let URL = "https://zc-sanjiv-api-app.herokuapp.com/api/payment/verify";
           var sendData = {
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_order_id: response.razorpay_order_id,

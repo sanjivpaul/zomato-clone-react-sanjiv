@@ -13,7 +13,7 @@ function QuickSearch() {
     // console.log("hello");
     try {
       let response = await axios.get(
-        "http://localhost:5003/api/get-meal-types"
+        "https://zc-sanjiv-api-app.herokuapp.com/api/get-meal-types"
       );
       let data = response.data;
       if (data.status === true) {
