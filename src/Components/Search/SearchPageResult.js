@@ -66,7 +66,7 @@ function SearchPageResult() {
         break;
       case "page":
         _filter["page"] = Number(value);
-        console.log(_filter);
+        // console.log(_filter);
         break;
     }
     console.log(_filter);
