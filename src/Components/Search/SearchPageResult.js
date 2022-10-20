@@ -15,7 +15,9 @@ function SearchPageResult() {
 
   let getLocationList = async () => {
     try {
-      let response = await axios.get("https://zc-sanjiv-api-app.herokuapp.com/api/get-location");
+      let response = await axios.get(
+        "https://zc-sanjiv-api-app.herokuapp.com/api/get-location"
+      );
       let data = response.data;
       if (data.status === true) {
         setLocationList([...data.result]);
@@ -61,6 +63,10 @@ function SearchPageResult() {
         // hcost
         _filter["lcost"] = Number(costForTwo[0]);
         _filter["hcost"] = Number(costForTwo[1]);
+        break;
+      case "page":
+        _filter["page"] = Number(value);
+        console.log(_filter);
         break;
     }
     console.log(_filter);
@@ -373,11 +379,36 @@ function SearchPageResult() {
                             ></i>
                           </a>
                         </li>
-                        <li className="shadow-sm page-item fw-bold">1</li>
-                        <li className="shadow-sm page-item fw-bold">2</li>
-                        <li className="shadow-sm page-item fw-bold">3</li>
-                        <li className="shadow-sm page-item fw-bold">4</li>
-                        <li className="shadow-sm page-item fw-bold">5</li>
+                        <li
+                          className="shadow-sm page-item fw-bold"
+                          onClick={(event) => makeFiltration(event, "page")}
+                        >
+                          1
+                        </li>
+                        <li
+                          className="shadow-sm page-item fw-bold"
+                          onClick={(event) => makeFiltration(event, "page")}
+                        >
+                          2
+                        </li>
+                        <li
+                          className="shadow-sm page-item fw-bold"
+                          onClick={(event) => makeFiltration(event, "page")}
+                        >
+                          3
+                        </li>
+                        <li
+                          className="shadow-sm page-item fw-bold"
+                          onClick={(event) => makeFiltration(event, "page")}
+                        >
+                          4
+                        </li>
+                        <li
+                          className="shadow-sm page-item fw-bold"
+                          onClick={(event) => makeFiltration(event, "page")}
+                        >
+                          5
+                        </li>
                         <li className="shadow-sm page-item fw-bold">
                           <a href="">
                             <i
