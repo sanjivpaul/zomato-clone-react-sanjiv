@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Swal from "sweetalert2";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 function ResturantPageResult() {
   let [tab, setTab] = useState(1);
@@ -43,7 +45,9 @@ function ResturantPageResult() {
 
   let getResturantDetails = async () => {
     try {
-      let URL = "https://zc-sanjiv-api-app.herokuapp.com/api/get-resturant-details-by-id/" + id;
+      let URL =
+        "https://zc-sanjiv-api-app.herokuapp.com/api/get-resturant-details-by-id/" +
+        id;
       let { data } = await axios.get(URL);
       // console.log(data);
       if (data.status === true) {
@@ -60,7 +64,8 @@ function ResturantPageResult() {
   let getMenuItems = async () => {
     try {
       let URL =
-        "https://zc-sanjiv-api-app.herokuapp.com/api/get-menu-item-list-by-resturant-id/" + id;
+        "https://zc-sanjiv-api-app.herokuapp.com/api/get-menu-item-list-by-resturant-id/" +
+        id;
       let { data } = await axios.get(URL);
       if (data.status === true) {
         // console.log(data.result);
@@ -137,7 +142,8 @@ function ResturantPageResult() {
       order_id: order.id, //order id is generated @ server side -- step 1
       handler: async function (response) {
         try {
-          let URL = "https://zc-sanjiv-api-app.herokuapp.com/api/payment/verify";
+          let URL =
+            "https://zc-sanjiv-api-app.herokuapp.com/api/payment/verify";
           var sendData = {
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_order_id: response.razorpay_order_id,
@@ -182,6 +188,31 @@ function ResturantPageResult() {
 
   return (
     <>
+      {/* carousel */}
+      <div
+        className="modal fade"
+        id="slideShow"
+        tabIndex="-1"
+        arial-labelledby="staticBackdropLabel"
+        arial-hidden="true"
+      >
+        <div className="modal-dialog modal-lg" style={{ height: "75vh" }}>
+          <div className="modal-content">
+            <div className="modal-body h-75">
+              <Carousel showThumbs={false} infiniteLoop={true}>
+                {restaurant.thumb.map((value, index) => {
+                  return (
+                    <div key={index} className="w-100">
+                      <img src={"/images/" + value} />
+                    </div>
+                  );
+                })}
+              </Carousel>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Modals start */}
       <div
         className="modal fade"
@@ -379,7 +410,9 @@ function ResturantPageResult() {
       <section className="row resturant-page-result">
         <section className="col-12 restaurant-main-image mt-5 position-relative">
           <img src={"/images/" + restaurant.image} alt="" />
-          <button className="btn-gallery position-absolute btn btn-bg-light">
+          <button className="btn-gallery position-absolute btn btn-bg-light"
+          data-bs-toggle="modal"
+          data-bs-target="#slideShow">
             Click to see Image Gallery
           </button>
         </section>
